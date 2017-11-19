@@ -22,9 +22,7 @@ public class Commune implements Serializable, Comparable<Commune> {
     private String codeDepartement;
 
     @Column(name = "CODE_POSTAL")
-    private boolean codePostal;
-
-
+    private String codePostal;
 
     public Integer getId() {
         return this.id;
@@ -51,11 +49,11 @@ public class Commune implements Serializable, Comparable<Commune> {
         this.codeDepartement = codeDepartement;
     }
 
-    public boolean isCodePostal() {
+    public String getCodePostal() {
         return codePostal;
     }
 
-    public void setCodePostal(boolean codePostal) {
+    public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
     }
 
@@ -77,7 +75,6 @@ public class Commune implements Serializable, Comparable<Commune> {
         int result = id;
         result = 31 * result + nom.hashCode();
         result = 31 * result + codeDepartement.hashCode();
-        result = 31 * result + (codePostal ? 1 : 0);
         return result;
     }
 
