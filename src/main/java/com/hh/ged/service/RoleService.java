@@ -41,18 +41,9 @@ public class RoleService  {
     public static final String ROLE_UTILISATEUR = "ROLE_UTILISATEUR";
     public static final String ROLE_DEVELOPPEUR = "ROLE_DEVELOPPEUR";
 
-    @Autowired
-    private UtilisateurRepo userRepository;
 
     @Autowired
     private RoleRepo roleRepo;
-
-    @Autowired
-    private UtilisateurRepo utilisateurRepo;
-
-    @Autowired
-    private UtilisateurRoleRepo utilisateurRoleRepo;
-
 
     public List<Role> createRoles() {
 

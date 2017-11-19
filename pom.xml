@@ -24,6 +24,7 @@
 		<java.version>1.8</java.version>
         <hibernate.version>5.2.11.Final</hibernate.version>
         <hibernate.search.version>5.8.2.Final</hibernate.search.version>
+		<mapstruct.version>1.2.0.Final</mapstruct.version>
 	</properties>
 
 	<dependencies>
@@ -99,7 +100,20 @@
             <version>2.6.1</version>
         </dependency>
 
-        <!--HIBERNATE SEARCH-->
+		<!--DTO-->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>${mapstruct.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-jdk8</artifactId>
+			<version>${mapstruct.version}</version>
+		</dependency>
+
+
+		<!--HIBERNATE SEARCH-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-search</artifactId>
@@ -148,6 +162,23 @@
                 <configuration>
                     <executable>true</executable>
                 </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+				<configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
