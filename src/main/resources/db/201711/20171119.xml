@@ -16,5 +16,17 @@
         </comment>
     </changeSet>
 
+    <changeSet id="201711191511" author="rvl" failOnError="true">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="communes"></tableExists>
+            </not>
+        </preConditions>
+        <sqlFile relativeToChangelogFile="false" path="db/201711/20171119-2.sql"></sqlFile>
+        <comment>
+            Ajout des communes
+        </comment>
+    </changeSet>
+
 
 </databaseChangeLog>
