@@ -6,6 +6,6 @@ Demande d'autorisation :
     
 Consulter les communes :
 
-    Mettre le header Authorization : Bearer <access_token> précédemment récupéré
+    Mettre le header "Authorization : Bearer <access_token>" précédemment récupéré
     http://vps358243.ovh.net/gedhh/communes/all
     
